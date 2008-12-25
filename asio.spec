@@ -3,8 +3,8 @@
 
 Summary: A cross-platform C++ library for network programming
 Name: asio
-Version: 1.0.0
-Release: 2%{?dist}
+Version: 1.2.0
+Release: 1%{?dist}
 URL: http://sourceforge.net/projects/asio/
 Source0: http://downloads.sourceforge.net/asio/asio-%{version}.tar.bz2
 License: Boost
@@ -55,6 +55,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/asio.hpp
 
 %changelog
+* Thu Dec 25 2008 Marc Maurer <uwog@uwog.net> 1.2.0-1
+- New upstream release
+
 * Sun Apr 06 2008 Marc Maurer <uwog@uwog.net> 1.0.0-2
 - Upstream removed the executable permissions on the docs
 
