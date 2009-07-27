@@ -4,9 +4,9 @@
 Summary: A cross-platform C++ library for network programming
 Name: asio
 Version: 1.4.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 URL: http://sourceforge.net/projects/asio/
-Source0: http://downloads.sourceforge.net/asio/asio-%{version}.tar.bz2
+Source0: http://downloads.sourceforge.net/asio/asio-%{version}.tar.gz
 License: Boost
 Group: System Environment/Libraries
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
@@ -55,6 +55,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/asio.hpp
 
 %changelog
+* Mon Jul 27 2009 Marc Maurer <uwog@uwog.net> 1.4.1-2
+- The tarball is now a gzip archive
+
 * Mon Jul 27 2009 Marc Maurer <uwog@uwog.net> 1.4.1-1
 - New upstream release
 
