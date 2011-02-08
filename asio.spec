@@ -4,7 +4,7 @@
 Summary: A cross-platform C++ library for network programming
 Name: asio
 Version: 1.4.1
-Release: 3%{?dist}
+Release: 4%{?dist}
 URL: http://sourceforge.net/projects/asio/
 Source0: http://downloads.sourceforge.net/asio/asio-%{version}.tar.gz
 Patch0: asio-ssl.patch
@@ -57,6 +57,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/asio.hpp
 
 %changelog
+* Mon Feb 07 2011 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.4.1-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_15_Mass_Rebuild
+
 * Fri Jun 18 2010 Dan Horák <dan[at]danny.cz> 1.4.1-3
 - fix FTBFS #538893 and #599857 (patch by Petr Machata)
 
