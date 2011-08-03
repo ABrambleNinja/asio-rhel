@@ -3,14 +3,12 @@
 
 Summary: A cross-platform C++ library for network programming
 Name: asio
-Version: 1.4.1
-Release: 4%{?dist}
+Version: 1.4.8
+Release: 1%{?dist}
 URL: http://sourceforge.net/projects/asio/
-Source0: http://downloads.sourceforge.net/asio/asio-%{version}.tar.gz
-Patch0: asio-ssl.patch
+Source0: http://downloads.sourceforge.net/asio/asio-%{version}.tar.bz2
 License: Boost
 Group: System Environment/Libraries
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires: openssl-devel
 BuildRequires: boost-devel
 
@@ -34,20 +32,15 @@ modern C++ approach.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %configure
 
 %install
-rm -rf $RPM_BUILD_ROOT
 make install DESTDIR=$RPM_BUILD_ROOT nobase_includeHEADERS_INSTALL='install -D -p -m644'
 
 %check
 make %{?_smp_mflags}
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(-,root,root,-)
@@ -57,6 +50,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/asio.hpp
 
 %changelog
+* Tue Aug  3 2011 Peter Robinson <pbrobinson@gmail.com> - 1.4.8-1
+- Update to 1.4.8 bugfix release
+
 * Mon Feb 07 2011 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.4.1-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_15_Mass_Rebuild
 
