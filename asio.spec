@@ -4,7 +4,7 @@
 Summary: A cross-platform C++ library for network programming
 Name: asio
 Version: 1.4.8
-Release: 5%{?dist}
+Release: 6%{?dist}
 URL: http://sourceforge.net/projects/asio/
 Source0: http://downloads.sourceforge.net/asio/asio-%{version}.tar.bz2
 License: Boost
@@ -50,6 +50,9 @@ make %{?_smp_mflags}
 %{_includedir}/asio.hpp
 
 %changelog
+* Tue Jul 30 2013 Petr Machata <pmachata@redhat.com> - 1.4.8-6
+- Rebuild for boost 1.54.0
+
 * Sun Feb 10 2013 Denis Arnaud <denis.arnaud_fedora@m4x.org> - 1.4.8-5
 - Rebuild for Boost-1.53.0
 
