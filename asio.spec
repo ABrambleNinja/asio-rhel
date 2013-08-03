@@ -4,7 +4,7 @@
 Summary: A cross-platform C++ library for network programming
 Name: asio
 Version: 1.4.8
-Release: 6%{?dist}
+Release: 7%{?dist}
 URL: http://sourceforge.net/projects/asio/
 Source0: http://downloads.sourceforge.net/asio/asio-%{version}.tar.bz2
 License: Boost
@@ -50,6 +50,9 @@ make %{?_smp_mflags}
 %{_includedir}/asio.hpp
 
 %changelog
+* Sat Aug 03 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.4.8-7
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
+
 * Tue Jul 30 2013 Petr Machata <pmachata@redhat.com> - 1.4.8-6
 - Rebuild for boost 1.54.0
 
