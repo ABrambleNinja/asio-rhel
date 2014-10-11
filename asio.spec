@@ -1,12 +1,12 @@
 # asio only ships headers, so no debuginfo package is needed
 %define debug_package %{nil}
 
-%global commit 00cdf672654fda984b0c57218eaf77845ad4167a
+%global commit 581fe686293be42260800c54cf2ac33576f35497
 
 Summary: A cross-platform C++ library for network programming
 Name: asio
 Version: 1.10.4
-Release: 1%{?dist}
+Release: 2%{?dist}
 URL: http://sourceforge.net/projects/asio/
 Source0: https://github.com/chriskohlhoff/asio/archive/%{commit}/asio-%{commit}.tar.gz
 License: Boost
@@ -55,6 +55,9 @@ make %{?_smp_mflags}
 %{_includedir}/asio.hpp
 
 %changelog
+* Sat Oct 11 2014 Fabio Alessandro Locati <fabiolocati@gmail.com> - 1.10.4-2
+- Forgot to update the commit id
+
 * Sat Oct 11 2014 Fabio Alessandro Locati <fabiolocati@gmail.com> - 1.10.4-1
 - Update to 1.10.4 version
 
