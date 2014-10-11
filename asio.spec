@@ -1,14 +1,18 @@
 # asio only ships headers, so no debuginfo package is needed
 %define debug_package %{nil}
 
+%global commit 00cdf672654fda984b0c57218eaf77845ad4167a
+
 Summary: A cross-platform C++ library for network programming
 Name: asio
-Version: 1.4.8
-Release: 10%{?dist}
+Version: 1.10.4
+Release: 1%{?dist}
 URL: http://sourceforge.net/projects/asio/
-Source0: http://downloads.sourceforge.net/asio/asio-%{version}.tar.bz2
+Source0: https://github.com/chriskohlhoff/asio/archive/%{commit}/asio-%{commit}.tar.gz
 License: Boost
 Group: System Environment/Libraries
+BuildRequires: autoconf
+BuildRequires: automake
 BuildRequires: openssl-devel
 BuildRequires: boost-devel
 
@@ -31,9 +35,10 @@ that provides developers with a consistent asynchronous I/O model using a
 modern C++ approach.
 
 %prep
-%setup -q
+%setup -qn %{name}-%{commit}/%{name}
 
 %build
+./autogen.sh
 %configure
 
 %install
@@ -44,12 +49,15 @@ make %{?_smp_mflags}
 
 %files devel
 %defattr(-,root,root,-)
-%doc COPYING LICENSE_1_0.txt doc/*
+%doc COPYING LICENSE_1_0.txt src/doc/*
 %dir %{_includedir}/asio
 %{_includedir}/asio/*
 %{_includedir}/asio.hpp
 
 %changelog
+* Sat Oct 11 2014 Fabio Alessandro Locati <fabiolocati@gmail.com> - 1.10.4-1
+- Update to 1.10.4 version
+
 * Fri Aug 15 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.4.8-10
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_21_22_Mass_Rebuild
 
