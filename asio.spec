@@ -6,7 +6,7 @@
 Summary: A cross-platform C++ library for network programming
 Name: asio
 Version: 1.10.4
-Release: 2%{?dist}
+Release: 3%{?dist}
 URL: http://sourceforge.net/projects/asio/
 Source0: https://github.com/chriskohlhoff/asio/archive/%{commit}/asio-%{commit}.tar.gz
 License: Boost
@@ -55,6 +55,9 @@ make %{?_smp_mflags}
 %{_includedir}/asio.hpp
 
 %changelog
+* Mon Jan 26 2015 Petr Machata <pmachata@redhat.com> - 1.10.4-3
+- Rebuild for boost 1.57.0
+
 * Sat Oct 11 2014 Fabio Alessandro Locati <fabiolocati@gmail.com> - 1.10.4-2
 - Forgot to update the commit id
 
