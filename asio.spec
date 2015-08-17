@@ -1,13 +1,13 @@
 # asio only ships headers, so no debuginfo package is needed
 %define debug_package %{nil}
 
-%global commit 581fe686293be42260800c54cf2ac33576f35497
+%global commit c466dc46d55755d38ee1831e95207d6b329c4976
 
 Summary: A cross-platform C++ library for network programming
 Name: asio
-Version: 1.10.4
-Release: 2%{?dist}
-URL: http://sourceforge.net/projects/asio/
+Version: 1.10.6
+Release: 1%{?dist}
+URL: https://think-async.com
 Source0: https://github.com/chriskohlhoff/asio/archive/%{commit}/asio-%{commit}.tar.gz
 License: Boost
 Group: System Environment/Libraries
@@ -55,6 +55,18 @@ make %{?_smp_mflags}
 %{_includedir}/asio.hpp
 
 %changelog
+* Sun Jul 26 2015 Fabio Alessandro Locati <fabio@locati.cc> -1.10.6-1
+- Update to 1.10.6 version
+
+* Wed Jul 22 2015 David Tardon <dtardon@redhat.com> - 1.10.4-5
+- rebuild for Boost 1.58
+
+* Wed Jun 17 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.10.4-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
+
+* Mon Jan 26 2015 Petr Machata <pmachata@redhat.com> - 1.10.4-3
+- Rebuild for boost 1.57.0
+
 * Sat Oct 11 2014 Fabio Alessandro Locati <fabiolocati@gmail.com> - 1.10.4-2
 - Forgot to update the commit id
 
