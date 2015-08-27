@@ -6,7 +6,7 @@
 Summary: A cross-platform C++ library for network programming
 Name: asio
 Version: 1.10.6
-Release: 2%{?dist}
+Release: 3%{?dist}
 URL: https://think-async.com
 Source0: https://github.com/chriskohlhoff/asio/archive/%{commit}/asio-%{commit}.tar.gz
 License: Boost
@@ -55,6 +55,9 @@ make %{?_smp_mflags}
 %{_includedir}/asio.hpp
 
 %changelog
+* Thu Aug 27 2015 Jonathan Wakely <jwakely@redhat.com> - 1.10.6-3
+- Rebuilt for Boost 1.59
+
 * Wed Jul 29 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.10.6-2
 - Rebuilt for https://fedoraproject.org/wiki/Changes/F23Boost159
 
