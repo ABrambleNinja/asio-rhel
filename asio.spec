@@ -1,12 +1,12 @@
 # asio only ships headers, so no debuginfo package is needed
-%define debug_package %{nil}
+%global debug_package %{nil}
 
 %global commit c466dc46d55755d38ee1831e95207d6b329c4976
 
 Summary: A cross-platform C++ library for network programming
 Name: asio
 Version: 1.10.6
-Release: 3%{?dist}
+Release: 4%{?dist}
 URL: https://think-async.com
 Source0: https://github.com/chriskohlhoff/asio/archive/%{commit}/asio-%{commit}.tar.gz
 License: Boost
@@ -55,6 +55,9 @@ make %{?_smp_mflags}
 %{_includedir}/asio.hpp
 
 %changelog
+* Sat Jan 02 2016 Fabio Alessandro Locati <fabio@locati.cc> - 1.10.6-4
+- Move from define to global
+
 * Thu Aug 27 2015 Jonathan Wakely <jwakely@redhat.com> - 1.10.6-3
 - Rebuilt for Boost 1.59
 
