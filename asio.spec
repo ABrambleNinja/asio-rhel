@@ -61,6 +61,11 @@ make install DESTDIR=%{buildroot}
 %{_includedir}/asio.hpp
 
 %changelog
+* Sat Jan 02 2016 Fabio Alessandro Locati <fabio@locati.cc> - 1.10.6-5
+- Remove useless pieces of the spec
+- Conform to more recent SPEC style
+- Fix date in changelog that was giving warnings
+
 * Sat Jan 02 2016 Fabio Alessandro Locati <fabio@locati.cc> - 1.10.6-4
 - Move from define to global
 
