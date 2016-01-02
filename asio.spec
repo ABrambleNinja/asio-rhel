@@ -2,19 +2,26 @@
 %global debug_package %{nil}
 
 %global commit c466dc46d55755d38ee1831e95207d6b329c4976
+%global shortcommit %(c=%{commit}; echo ${c:0:7})
 
-Summary: A cross-platform C++ library for network programming
-Name: asio
-Version: 1.10.6
-Release: 4%{?dist}
-URL: https://think-async.com
-Source0: https://github.com/chriskohlhoff/asio/archive/%{commit}/asio-%{commit}.tar.gz
-License: Boost
-Group: System Environment/Libraries
-BuildRequires: autoconf
-BuildRequires: automake
-BuildRequires: openssl-devel
-BuildRequires: boost-devel
+Name:           asio
+Version:        1.10.6
+Release:        5%{?dist}
+Summary:        A cross-platform C++ library for network programming
+
+Group:          System Environment/Libraries
+License:        Boost
+URL:            https://think-async.com
+Source0:        https://github.com/chriskohlhoff/%{name}/archive/%{commit}.tar.gz#/%{name}-%{shortcommit}.tar.gz
+
+%if 0%{?rhel} == 5
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
+%endif
+
+BuildRequires:  autoconf
+BuildRequires:  automake
+BuildRequires:  openssl-devel
+BuildRequires:  boost-devel
 
 %description
 The asio package contains a cross-platform C++ library for network programming
@@ -22,10 +29,10 @@ that provides developers with a consistent asynchronous I/O model using a
 modern C++ approach.
 
 %package devel
-Group: Development/Libraries
-Summary: Header files for asio
-Requires: openssl-devel
-Requires: boost-devel
+Summary:        Header files for asio
+Group:          Development/Libraries
+Requires:       openssl-devel
+Requires:       boost-devel
 
 %description devel
 Header files you can use to develop applications with asio.
@@ -40,16 +47,15 @@ modern C++ approach.
 %build
 ./autogen.sh
 %configure
-
-%install
-make install DESTDIR=$RPM_BUILD_ROOT nobase_includeHEADERS_INSTALL='install -D -p -m644'
-
-%check
 make %{?_smp_mflags}
 
+%install
+make install DESTDIR=%{buildroot}
+
 %files devel
-%defattr(-,root,root,-)
-%doc COPYING LICENSE_1_0.txt src/doc/*
+%{!?_licensedir:%global license %doc}
+%doc src/doc/*
+%license LICENSE_1_0.txt
 %dir %{_includedir}/asio
 %{_includedir}/asio/*
 %{_includedir}/asio.hpp
@@ -109,7 +115,7 @@ make %{?_smp_mflags}
 * Thu Jan 12 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.4.8-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_17_Mass_Rebuild
 
-* Tue Aug  3 2011 Peter Robinson <pbrobinson@gmail.com> - 1.4.8-1
+* Wed Aug  3 2011 Peter Robinson <pbrobinson@gmail.com> - 1.4.8-1
 - Update to 1.4.8 bugfix release
 
 * Mon Feb 07 2011 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.4.1-4
