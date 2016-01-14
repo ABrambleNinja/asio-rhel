@@ -6,7 +6,7 @@
 
 Name:           asio
 Version:        1.10.6
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        A cross-platform C++ library for network programming
 
 Group:          System Environment/Libraries
@@ -61,6 +61,9 @@ make install DESTDIR=%{buildroot}
 %{_includedir}/asio.hpp
 
 %changelog
+* Thu Jan 14 2016 Jonathan Wakely <jwakely@redhat.com> - 1.10.6-6
+- Rebuilt for Boost 1.60
+
 * Sat Jan 02 2016 Fabio Alessandro Locati <fabio@locati.cc> - 1.10.6-5
 - Remove useless pieces of the spec
 - Conform to more recent SPEC style
