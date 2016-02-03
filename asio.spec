@@ -6,7 +6,7 @@
 
 Name:           asio
 Version:        1.10.6
-Release:        6%{?dist}
+Release:        7%{?dist}
 Summary:        A cross-platform C++ library for network programming
 
 Group:          System Environment/Libraries
@@ -61,6 +61,9 @@ make install DESTDIR=%{buildroot}
 %{_includedir}/asio.hpp
 
 %changelog
+* Wed Feb 03 2016 Fedora Release Engineering <releng@fedoraproject.org> - 1.10.6-7
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
+
 * Thu Jan 14 2016 Jonathan Wakely <jwakely@redhat.com> - 1.10.6-6
 - Rebuilt for Boost 1.60
 
