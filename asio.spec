@@ -22,6 +22,7 @@ BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  openssl-devel
 BuildRequires:  boost-devel
+BuildRequires:  perl-generators
 
 %description
 The asio package contains a cross-platform C++ library for network programming
