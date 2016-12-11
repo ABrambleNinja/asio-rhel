@@ -1,11 +1,11 @@
 # asio only ships headers, so no debuginfo package is needed
 %global debug_package %{nil}
 
-%global commit 6c4268544ded99344206147a17c5fa87ed91e832
+%global commit 28d9b8d6df708024af5227c551673fdb2519f5bf
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           asio
-Version:        1.10.7
+Version:        1.10.8
 Release:        1%{?dist}
 Summary:        A cross-platform C++ library for network programming
 
@@ -62,7 +62,10 @@ make install DESTDIR=%{buildroot}
 %{_includedir}/asio.hpp
 
 %changelog
-* Tue Sep 13 2016 Fabio Alessandro Locati <fale@redhat.com> - 1.10.7-1
+* Sun Dec 11 2016 Fabio Alessandro Locati <fale@fedoraproject.org> - 1.10.8-1
+- Update to 1.10.8
+
+* Tue Sep 13 2016 Fabio Alessandro Locati <fale@fedoraproject.org> - 1.10.7-1
 - Update to 1.10.7
 
 * Wed Feb 03 2016 Fedora Release Engineering <releng@fedoraproject.org> - 1.10.6-7
@@ -71,12 +74,12 @@ make install DESTDIR=%{buildroot}
 * Thu Jan 14 2016 Jonathan Wakely <jwakely@redhat.com> - 1.10.6-6
 - Rebuilt for Boost 1.60
 
-* Sat Jan 02 2016 Fabio Alessandro Locati <fale@redhat.com> - 1.10.6-5
+* Sat Jan 02 2016 Fabio Alessandro Locati <fale@fedoraproject.org> - 1.10.6-5
 - Remove useless pieces of the spec
 - Conform to more recent SPEC style
 - Fix date in changelog that was giving warnings
 
-* Sat Jan 02 2016 Fabio Alessandro Locati <fale@redhat.com> - 1.10.6-4
+* Sat Jan 02 2016 Fabio Alessandro Locati <fale@fedoraproject.org> - 1.10.6-4
 - Move from define to global
 
 * Thu Aug 27 2015 Jonathan Wakely <jwakely@redhat.com> - 1.10.6-3
@@ -85,7 +88,7 @@ make install DESTDIR=%{buildroot}
 * Wed Jul 29 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.10.6-2
 - Rebuilt for https://fedoraproject.org/wiki/Changes/F23Boost159
 
-* Sun Jul 26 2015 Fabio Alessandro Locati <fale@redhat.com> -1.10.6-1
+* Sun Jul 26 2015 Fabio Alessandro Locati <fale@fedoraproject.org> -1.10.6-1
 - Update to 1.10.6 version
 
 * Wed Jul 22 2015 David Tardon <dtardon@redhat.com> - 1.10.4-5
@@ -97,13 +100,13 @@ make install DESTDIR=%{buildroot}
 * Mon Jan 26 2015 Petr Machata <pmachata@redhat.com> - 1.10.4-3
 - Rebuild for boost 1.57.0
 
-* Sat Oct 11 2014 Fabio Alessandro Locati <fale@redhat.com> - 1.10.4-2
+* Sat Oct 11 2014 Fabio Alessandro Locati <fale@fedoraproject.org> - 1.10.4-2
 - Forgot to update the commit id
 
-* Sat Oct 11 2014 Fabio Alessandro Locati <fale@redhat.com> - 1.10.4-1
+* Sat Oct 11 2014 Fabio Alessandro Locati <fale@fedoraproject.org> - 1.10.4-1
 - Update to 1.10.4 version
 
-* Sun Aug 10 2014 Fabio Alessandro Locati <fale@redhat.com> - 1.10.3-1
+* Sun Aug 10 2014 Fabio Alessandro Locati <fale@fedoraproject.org> - 1.10.3-1
 - Update to 1.10.3 version
 
 * Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.4.8-9
