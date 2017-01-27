@@ -6,7 +6,7 @@
 
 Name:           asio
 Version:        1.10.8
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A cross-platform C++ library for network programming
 
 Group:          System Environment/Libraries
@@ -62,6 +62,9 @@ make install DESTDIR=%{buildroot}
 %{_includedir}/asio.hpp
 
 %changelog
+* Fri Jan 27 2017 Jonathan Wakely <jwakely@redhat.com> - 1.10.8-2
+- Rebuilt for Boost 1.63
+
 * Sun Dec 11 2016 Fabio Alessandro Locati <fale@fedoraproject.org> - 1.10.8-1
 - Update to 1.10.8
 
