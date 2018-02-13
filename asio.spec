@@ -15,7 +15,6 @@ URL:            https://think-async.com
 Source0:        https://github.com/chriskohlhoff/%{name}/archive/%{commit}.tar.gz#/%{name}-%{shortcommit}.tar.gz
 
 %if 0%{?rhel} == 5
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 %endif
 
 BuildRequires:  autoconf
