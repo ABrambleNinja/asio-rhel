@@ -17,6 +17,7 @@ Source0:        https://github.com/chriskohlhoff/%{name}/archive/%{commit}.tar.g
 %if 0%{?rhel} == 5
 %endif
 
+BuildRequires:  gcc
 BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  openssl-devel
