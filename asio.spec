@@ -14,10 +14,8 @@ License:        Boost
 URL:            https://think-async.com
 Source0:        https://github.com/chriskohlhoff/%{name}/archive/%{commit}.tar.gz#/%{name}-%{shortcommit}.tar.gz
 
-%if 0%{?rhel} == 5
-%endif
-
 BuildRequires:  gcc
+BuildRequires:  gcc-c++
 BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  openssl-devel
@@ -48,17 +46,15 @@ modern C++ approach.
 %build
 ./autogen.sh
 %configure
-make %{?_smp_mflags}
+%make_build
 
 %install
-make install DESTDIR=%{buildroot}
+%make_install
 
 %files devel
-%{!?_licensedir:%global license %doc}
 %doc src/doc/*
 %license LICENSE_1_0.txt
-%dir %{_includedir}/asio
-%{_includedir}/asio/*
+%{_includedir}/asio/
 %{_includedir}/asio.hpp
 
 %changelog
