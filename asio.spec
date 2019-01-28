@@ -9,7 +9,6 @@ Version:        1.10.8
 Release:        8%{?dist}
 Summary:        A cross-platform C++ library for network programming
 
-Group:          System Environment/Libraries
 License:        Boost
 URL:            https://think-async.com
 Source0:        https://github.com/chriskohlhoff/%{name}/archive/%{commit}.tar.gz#/%{name}-%{shortcommit}.tar.gz
@@ -29,7 +28,6 @@ modern C++ approach.
 
 %package devel
 Summary:        Header files for asio
-Group:          Development/Libraries
 Requires:       openssl-devel
 Requires:       boost-devel
 
