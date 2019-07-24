@@ -6,7 +6,7 @@
 
 Name:           asio
 Version:        1.10.8
-Release:        9%{?dist}
+Release:        10%{?dist}
 Summary:        A cross-platform C++ library for network programming
 
 License:        Boost
@@ -56,6 +56,9 @@ modern C++ approach.
 %{_includedir}/asio.hpp
 
 %changelog
+* Wed Jul 24 2019 Fedora Release Engineering <releng@fedoraproject.org> - 1.10.8-10
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
+
 * Thu Jan 31 2019 Fedora Release Engineering <releng@fedoraproject.org> - 1.10.8-9
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
 
