@@ -32,5 +32,5 @@ rpmbuild --define "_topdir `pwd`/build" -ba asio.spec
 ```
 8. Install asio-devel package
 ```bash
-sudo dnf install ./build/RPMS/x86_64/asio-devel-1.10.8-10.el8.x86_64.rpm
+sudo dnf install ./build/RPMS/x86_64/asio-devel-*.el8.x86_64.rpm
 ```
