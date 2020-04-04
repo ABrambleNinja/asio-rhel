@@ -2,6 +2,9 @@
 Forked from https://src.fedoraproject.org/rpms/asio.git to build for RHEL/CentOS 8
 
 ## How to build
+See https://github.com/chrisdevchroma/build-packages-docker/blob/master/asio.sh for a automated script.
+
+### Manual build
 1. Install the Development tools (includes rpm-build)
 ```bash
 sudo dnf group install "Development Tools"
@@ -32,5 +35,5 @@ rpmbuild --define "_topdir `pwd`/build" -ba asio.spec
 ```
 8. Install asio-devel package
 ```bash
-sudo dnf install ./build/RPMS/x86_64/asio-devel-*.el8.x86_64.rpm
+sudo dnf install ./build/RPMS/x86_64/asio-devel-[[:digit:]]*.el8.x86_64.rpm
 ```
