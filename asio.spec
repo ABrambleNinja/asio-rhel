@@ -5,13 +5,13 @@
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           asio
-Version:        1.10.8
-Release:        11%{?dist}
+Version:        1.14.0
+Release:        12%{?dist}
 Summary:        A cross-platform C++ library for network programming
 
 License:        Boost
 URL:            https://think-async.com
-Source0:        https://github.com/chriskohlhoff/%{name}/archive/%{commit}.tar.gz#/%{name}-%{shortcommit}.tar.gz
+Source0:        %{name}-%{version}.tar.bz2
 
 BuildRequires:  gcc
 BuildRequires:  gcc-c++
@@ -39,10 +39,10 @@ that provides developers with a consistent asynchronous I/O model using a
 modern C++ approach.
 
 %prep
-%setup -qn %{name}-%{commit}/%{name}
+%setup -q
 
 %build
-./autogen.sh
+autoreconf --install
 %configure
 %make_build
 
@@ -50,7 +50,7 @@ modern C++ approach.
 %make_install
 
 %files devel
-%doc src/doc/*
+%doc doc/*
 %license LICENSE_1_0.txt
 %{_includedir}/asio/
 %{_includedir}/asio.hpp
